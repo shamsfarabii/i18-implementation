@@ -1,6 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-};
+// next.config.mjs
+import { i18n } from './next-i18next.config.js';
 
-export default nextConfig;
+export default {
+  i18n,
+};
