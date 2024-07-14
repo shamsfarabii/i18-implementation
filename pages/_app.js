@@ -1,8 +1,14 @@
 import "@/styles/globals.css";
 import { appWithTranslation } from 'next-i18next'
 
-const MyApp = ({ Component, pageProps }) => (
-  <Component {...pageProps} />
-)
+function App({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
 
-export default appWithTranslation(MyApp)
+export const getServerSideProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common', 'loginSignup'], null, ['en', 'bn'])),
+  },
+})
+
+export default appWithTranslation(App)

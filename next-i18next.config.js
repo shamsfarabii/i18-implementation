@@ -12,12 +12,24 @@ const i18n = {
     defaultLocale: 'bn',
 };
 
-
 module.exports = {
-    i18n,
+    i18n: i18n,
     localePath:
         typeof window === 'undefined'
             ? require('path').resolve('./public/locales')
             : '/public/locales',
-    ns: ['common'],
+    ns: ['common', 'loginSignup'],
 };
+
+
+// module.exports = {
+//     i18n: {
+//         defaultLocale: 'en',
+//         locales: ['en', 'de'],
+//     },
+//     localePath:
+//         typeof window === 'undefined'
+//             ? require('path').resolve('./public/locales')
+//             : '/public/locales',
+//     ns: ['common', 'loginSignup'],
+// }
